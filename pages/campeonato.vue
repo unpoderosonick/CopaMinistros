@@ -16,7 +16,7 @@
           class="flex w-2/3 transition duration-300 bg-white border-t-4 border-red-400 rounded-lg shadow hover:bg-gray-50">
           <div class="w-1/2">
             <div class="flex w-4/5 pt-2 pb-2">
-              <img src="https://fineproxy.org/wp-content/uploads/2023/08/Dota-2-logo.png">
+              <img src="https://fineproxy.org/wp-content/uploads/2023/08/Dota-2-logo.png" alt="dota2-logo">
             </div>
           </div>
           <div class="w-1/2 ">

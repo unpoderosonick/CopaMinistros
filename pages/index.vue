@@ -1,64 +1,44 @@
 <template>
   <div class="min-h-screen p-8 bg-gray-100 text-[#333333]">
-
     <h1 class="mb-10 text-4xl font-bold text-center">Copa Ministros del Dota</h1>
-
     <!--  Puntos acumulados -->
     <div>
       <h2 class="mb-5 text-2xl font-bold">Puntos Acumulados</h2>
-
     </div>
-
-
     <div class="">
       <div class="flex items-center justify-center ">
-
-
         <div
           class="p-5 transition duration-300 bg-white border-t-4 border-red-400 rounded-lg shadow-sm lg:flex lg:w-2/3 hover:border-red-500 hover:shadow-md">
-
           <div>
-
           </div>
           <div class="lg:p-5 lg:w-1/2">
 
-            <div v-for="(acumulado, proplayerPorParticipante, index) in puntosOrdenados" :key="acumulado" class="p-2">
+            <div v-for="(player, index) in listBestPlayers" :key="acumulado" class="p-2">
               <div class="flex ">
                 <div class="w-1/2 text-left lg:w-2/4 ">
-                  <p class="text-base ">{{ index + 1 }}. {{ proplayerPorParticipante }}</p>
+                  <p class="text-base ">{{ index + 1 }}. {{ player.participante }}</p>
                 </div>
-                <div class="w-1/2 text-right">
-                  <p class="">{{ acumulado }} pts</p>
+                <div class="w-1/4 text-right">
+                  <p class="">{{ player.points }} pts</p>
+                </div>
+                <div class="w-1/4 text-center">
+                  <p class="text-center">{{ player.won + " - " + player.lost + " - " + player.total }} </p>
                 </div>
               </div>
             </div>
-
           </div>
 
-
           <div class="flex justify-center lg:w-1/2">
-
             <div class="w-auto lg:pr-0">
               <div class="flex justify-center pt-2 pb-2">
                 <img src="https://fineproxy.org/wp-content/uploads/2023/08/Dota-2-logo.png">
               </div>
             </div>
           </div>
-
-
-
-
-
         </div>
       </div>
     </div>
-
-
-
-
-
     <!--  FIN acumulados -->
-
 
     <!-- Fase de Grupos en Tarjetas -->
     <h2 class="pt-5 mb-5 text-2xl font-bold">Fase de Grupos</h2>
@@ -86,19 +66,13 @@
         </div>
       </div>
     </div>
-
-
   </div>
 </template>
-
-
 <script setup>
 
 useSeoMeta({
   title: 'Copa Ministros del Dota',
-
   description: 'Campeonato interno de pro players',
-
   ogImage: 'https://fineproxy.org/wp-content/uploads/2023/08/Dota-2-logo.png',
 
 })
@@ -183,36 +157,58 @@ const grupos = [
 
 ];
 
-const proplayerPorParticipante = computed(() => {
-  const puntos = {};
+const processMatches = computed(() => {
+  const points = {};
+  const won = {};
+  const lost = {};
+  const total = {};
 
+  // return points, won, lost and total base on the result of the matches
   grupos.forEach(grupo => {
     grupo.enfrentamientos.forEach(({ participante1, participante2, ganador }) => {
-      if (!puntos[participante1]) puntos[participante1] = 0;
-      if (!puntos[participante2]) puntos[participante2] = 0;
-
-      if (ganador) {
-        puntos[ganador] += 3; // Asignar 3 puntos al ganador
+      if (!points[participante1]) points[participante1] = 0;
+      if (!points[participante2]) points[participante2] = 0;
+      if (!won[participante1]) won[participante1] = 0;
+      if (!won[participante2]) won[participante2] = 0;
+      if (!lost[participante1]) lost[participante1] = 0;
+      if (!lost[participante2]) lost[participante2] = 0;
+      if (ganador === participante1) {
+        points[participante1] += 3;
+        won[participante1] += 1;
+        lost[participante2] += 1;
+      } else if (ganador === participante2) {
+        points[participante2] += 3;
+        won[participante2] += 1;
+        lost[participante1] += 1;
       }
-      // será prudente agregar aqui la lógica de "+1" por ganar por WalkOver??
+      total[participante1] = won[participante1] + lost[participante1];
+      total[participante2] = won[participante2] + lost[participante2];
     });
   });
 
-  return puntos;
+  const result = Object.keys(points).map(participante => ({
+    participante,
+    points: points[participante],
+    won: won[participante],
+    lost: lost[participante],
+    total: total[participante]
+  }));
+
+  return result;
 });
 
-const puntosOrdenados = computed(() => {
-  const sortedEntries = Object.entries(proplayerPorParticipante.value)
-    .sort(([, a], [, b]) => b - a);
+const listBestPlayers = computed(() => {
+  const numberPlayers = 5;
+  const bestPlayers = processMatches.value
+    .sort((a, b) => {
+      if (a.points === b.points) {
+        return b.total - a.total; // Sort by number of matches
+      }
+      return b.points - a.points;
+    })
+    .slice(0, numberPlayers);
 
-  // Tomar solo los primeros 5 elementos
-  const top5 = sortedEntries.slice(0, 5);
-
-  return Object.fromEntries(top5);
+  return bestPlayers;
 });
-
-
-// modifique los nombres de la variable "puntos" por proplayer y de "participante" por "acumulado" porque me funfundia la lógica de gpt xd
-
 
 </script>
