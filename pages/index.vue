@@ -127,7 +127,7 @@ const grupos = [
   {
     nombre: 'Grupo C',
     enfrentamientos: [
-      { id: 21, participante1: 'Ronaldo', participante2: 'Rugery', ganador: '' },
+      { id: 21, participante1: 'Ronaldo', participante2: 'Rugery', ganador: 'Ronaldo' },
       { id: 22, participante1: 'Ronaldo', participante2: 'Sebas', ganador: '' },
       { id: 23, participante1: 'Ronaldo', participante2: 'Viceps', ganador: '' },
       { id: 24, participante1: 'Ronaldo', participante2: 'Wilder', ganador: '' },
@@ -142,7 +142,7 @@ const grupos = [
   {
     nombre: 'Grupo D',
     enfrentamientos: [
-      { id: 31, participante1: 'Rednag', participante2: 'Enriqo', ganador: '' },
+      { id: 31, participante1: 'Rednag', participante2: 'Enriqo', ganador: 'Enriqo' },
       { id: 32, participante1: 'Rednag', participante2: 'Pipoca', ganador: '' },
       { id: 33, participante1: 'Rednag', participante2: 'Rolfy', ganador: '' },
       { id: 34, participante1: 'Rednag', participante2: 'Gary', ganador: '' },
