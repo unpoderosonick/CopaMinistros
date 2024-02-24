@@ -118,7 +118,7 @@ const grupos = [
       { id: 14, participante1: 'Don Bicho', participante2: 'Juaya', ganador: '' },
       { id: 15, participante1: 'Marcux', participante2: 'Raoul', ganador: '' },
       { id: 16, participante1: 'Marcux', participante2: 'Rguz', ganador: '' },
-      { id: 17, participante1: 'Marcux', participante2: 'Juaya', ganador: '' },
+      { id: 17, participante1: 'Marcux', participante2: 'Juaya', ganador: 'Marcux' },
       { id: 18, participante1: 'Raoul', participante2: 'Rguz', ganador: '' },
       { id: 19, participante1: 'Raoul', participante2: 'Juaya', ganador: '' },
       { id: 20, participante1: 'Rguz', participante2: 'Juaya', ganador: '' },
@@ -128,7 +128,7 @@ const grupos = [
     nombre: 'Grupo C',
     enfrentamientos: [
       { id: 21, participante1: 'Ronaldo', participante2: 'Rugery', ganador: 'Ronaldo' },
-      { id: 22, participante1: 'Ronaldo', participante2: 'Sebas', ganador: '' },
+      { id: 22, participante1: 'Ronaldo', participante2: 'Sebas', ganador: 'Sebas' },
       { id: 23, participante1: 'Ronaldo', participante2: 'Viceps', ganador: '' },
       { id: 24, participante1: 'Ronaldo', participante2: 'Wilder', ganador: '' },
       { id: 25, participante1: 'Rugery', participante2: 'Sebas', ganador: '' },
