@@ -112,7 +112,7 @@ const grupos = [
   {
     nombre: 'Grupo B',
     enfrentamientos: [
-      { id: 11, participante1: 'Don Bicho', participante2: 'Marcux', ganador: '' },
+      { id: 11, participante1: 'Don Bicho', participante2: 'Marcux', ganador: 'Marcux' },
       { id: 12, participante1: 'Don Bicho', participante2: 'Raoul', ganador: '' },
       { id: 13, participante1: 'Don Bicho', participante2: 'Rguz', ganador: '' },
       { id: 14, participante1: 'Don Bicho', participante2: 'Juaya', ganador: '' },
@@ -145,7 +145,7 @@ const grupos = [
       { id: 31, participante1: 'Rednag', participante2: 'Enriqo', ganador: 'Enriqo' },
       { id: 32, participante1: 'Rednag', participante2: 'Pipoca', ganador: '' },
       { id: 33, participante1: 'Rednag', participante2: 'Rolfy', ganador: '' },
-      { id: 34, participante1: 'Rednag', participante2: 'Gary', ganador: '' },
+      { id: 34, participante1: 'Rednag', participante2: 'Gary', ganador: 'Gary' },
       { id: 35, participante1: 'Enriqo', participante2: 'Pipoca', ganador: 'Pipoca' },
       { id: 36, participante1: 'Enriqo', participante2: 'Rolfy', ganador: '' },
       { id: 37, participante1: 'Enriqo', participante2: 'Gary', ganador: '' },
