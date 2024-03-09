@@ -116,7 +116,7 @@ const grupos = [
       { id: 12, participante1: 'Don Bicho', participante2: 'Raoul', ganador: '' },
       { id: 13, participante1: 'Don Bicho', participante2: 'Rguz', ganador: '' },
       { id: 14, participante1: 'Don Bicho', participante2: 'Juaya', ganador: '' },
-      { id: 15, participante1: 'Marcux', participante2: 'Raoul', ganador: 'Marcux' },
+      { id: 15, participante1: 'Marcux', participante2: 'Raoul', ganador: 'Raoul' },
       { id: 16, participante1: 'Marcux', participante2: 'Rguz', ganador: '' },
       { id: 17, participante1: 'Marcux', participante2: 'Juaya', ganador: 'Marcux' },
       { id: 18, participante1: 'Raoul', participante2: 'Rguz', ganador: '' },
