@@ -151,7 +151,7 @@ const grupos = [
       { id: 37, participante1: 'Enriqo', participante2: 'Gary', ganador: 'Enriqo' },
       { id: 38, participante1: 'Pipoca', participante2: 'Rolfy', ganador: 'Pipoca' },
       { id: 39, participante1: 'Pipoca', participante2: 'Gary', ganador: '' },
-      { id: 40, participante1: 'Rolfy', participante2: 'Gary', ganador: '' },
+      { id: 40, participante1: 'Rolfy', participante2: 'Gary', ganador: 'Rolfy' },
     ],
   },
 
