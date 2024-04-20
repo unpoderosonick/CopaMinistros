@@ -105,7 +105,7 @@ const grupos = [
       { id: 6, participante1: 'Edward', participante2: 'Neva', ganador: '' },
       { id: 7, participante1: 'Edward', participante2: 'Jahdiel', ganador: '' },
       { id: 8, participante1: 'Zed', participante2: 'Neva', ganador: '' },
-      { id: 9, participante1: 'Zed', participante2: 'Jahdiel', ganador: '' },
+      { id: 9, participante1: 'Zed', participante2: 'Jahdiel', ganador: 'Zed' },
       { id: 10, participante1: 'Neva', participante2: 'Jahdiel', ganador: '' },
     ],
   },
@@ -121,7 +121,7 @@ const grupos = [
       { id: 17, participante1: 'Marcux', participante2: 'Juaya', ganador: 'Marcux' },
       { id: 18, participante1: 'Raoul', participante2: 'Rguz', ganador: '' },
       { id: 19, participante1: 'Raoul', participante2: 'Juaya', ganador: 'Raoul' },
-      { id: 20, participante1: 'Rguz', participante2: 'Juaya', ganador: '' },
+      { id: 20, participante1: 'Rguz', participante2: 'Juaya', ganador: 'Juaya' },
     ],
   },
   {
